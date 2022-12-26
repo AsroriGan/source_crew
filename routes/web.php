@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// datasiswa
+Route::get('/datasiswa',[DatasiswaController::class,'datasiswa'])->name('datasiswa');
+//datakelas
+Route::get('/datakelas',[DatasiswaController::class,'datakelas'])->name('datakelas');
