@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datasiswas', function (Blueprint $table) {
+        Schema::create('absensi', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn');
-            $table->string('nama');
-            $table->string('kelis');
-            $table->string('jurusan');
-            $table->string('jeniskelamin');
-            $table->string('qr_code');
+            $table->bigInteger("nisn");
+            $table->date("tanggal");
+            $table->string("jam");
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datasiswas');
+        Schema::dropIfExists('absensi');
     }
 };
