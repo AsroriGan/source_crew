@@ -32,7 +32,7 @@
                 <div class="page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item" style="cursor: pointer;">Data</a></li>
-						<li class="breadcrumb-item active"><a href="/datasiswa">DataSiswa</a></li>
+						<li class="breadcrumb-item active"><a href="/mapel">Data Mapel</a></li>
 					</ol>
                 </div>
                 <!-- row -->
@@ -43,7 +43,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <a href="/tambahmapel"
-                                class="btn btn-outline-info btn-sm mb-1">Tambah Data Siswa</a>
+                                class="btn btn-outline-info btn-sm mb-1">Tambah Data Mapel</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -52,19 +52,27 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Kelas</th>
+                                                <th>Jurusan</th>
                                                 <th>Mapel</th>
                                                 <th>Aksi</th>
                                                
                                             </tr>
                                         </thead>
+                                        @php
+                                                $no = 1;
+                                            @endphp
                                         <tbody>
+                                            @foreach ($data as $row)
                                             <tr>
-                                                <td>1</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>Edinburgh</td>
+                                                <td>{{$no++}}</td>
+                                                <td>{{$row->idkelass->kelas}}</td>
+                                                <td>{{$row->idjurusan->jurusan}}</td>
+                                                <td>{{$row->mapel}}
+                                                <td>   <a href="editmapel/{{$row->id}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a></td>
+                                                
                                             </tr>
-                                           
+                                            @endforeach 
+                                        </tbody>
                                         </tbody>
                                     </table>
                                 </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MapelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,11 @@ Route::get('/tambahjurusan',[JurusanController::class,'tambahjurusan'])->name('t
 Route::post('/tambahjurusanpost',[JurusanController::class,'tambahjurusanpost'])->name('tambahjurusanpost');
 Route::get('/editjurusan/{id}',[JurusanController::class,'editjurusan'])->name('editjurusan');
 Route::post('/editjurusanpost/{id}',[JurusanController::class,'editjurusanpost'])->name('editjurusanpost');
+
+
+//mapel
+Route::get('/mapel',[MapelController::class,'mapel'])->name('mapel');
+Route::get('/tambahmapel',[MapelController::class,'tambahmapel'])->name('tambahmapel');
+Route::post('/tambahmapelpost',[MapelController::class,'tambahmapelpost'])->name('tambahmapelpost');
+Route::get('/editmapel/{id}',[MapelController::class,'editmapel'])->name('editmapel');
+Route::post('/editmapelpost/{id}',[MapelController::class,'editmapelpost'])->name('editmapelpost');

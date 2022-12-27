@@ -32,7 +32,7 @@
                 <div class="page-titles">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item" style="cursor: pointer;">Data</a></li>
-                        <li class="breadcrumb-item active"><a href="/jurusan">Data Jurusan</a></li>
+                        <li class="breadcrumb-item active"><a href="/mapel">Data mapel</a></li>
                     </ol>
                 </div>
                 <!-- row -->
@@ -42,19 +42,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Tambah Data Jurusan</h4>
+                                <h4>Tambah Data Mapel</h4>
                             </div>
                             <div class="card-body">
                                  <div class="basic-form">
-                                    <form action="/tambahjurusanpost" method="post">
+                                    <form action="/editmapelpost/{{$data->id}}" method="post">
                                         @csrf
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label col-form-label-lg">Kelas</label>
                                             <div class="col-sm-10">
                                                <select class="form-control @error('kelas') is-invalid @enderror" name="kelas" aria-label="Default select example" >
-                                                <option value="" disabled selected>Pilih kelas </option>
-                                                @foreach ($idkelas as $kelas)
-                                                    <option value="{{ $kelas->id }}">
+                                                @foreach ($kelas as $kelas)
+                                                    <option value="{{ $kelas->id }}" <?php if ($kelas->kelas == $kelas->id) {
+                                                        echo 'selected';
+                                                    }  ?> ?>
                                                         {{ $kelas->kelas }}</option>
                                                 @endforeach
                                                 </select>
@@ -66,7 +67,23 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label col-form-label-lg">Jurusan</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="jurusan" class="form-control form-control-lg">
+                                               <select class="form-control @error('jurusan') is-invalid @enderror" name="jurusan" aria-label="Default select example" >
+                                                @foreach ($jurusan as $jurusan)
+                                                    <option value="{{ $jurusan->id }}" <?php if ($jurusan->jurusan == $jurusan->id) {
+                                                        echo 'selected';
+                                                    }  ?> ?>
+                                                        {{ $jurusan->jurusan }}</option>
+                                                @endforeach
+                                                </select>
+                                            @error('jurusan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label col-form-label-lg">Mapel</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="mapel" class="form-control form-control-lg" value="{{ $data->mapel }}">
                                             </div>
                                         </div>    
                                         

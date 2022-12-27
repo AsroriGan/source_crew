@@ -16,4 +16,8 @@ class Kelas extends Model
     {
         return $this->hasMany(Jurusan::class);
     }
+    public function idkelass()
+    {
+        return $this->hasMany(Mapel::class);
+    }
 }

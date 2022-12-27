@@ -16,4 +16,8 @@ class Jurusan extends Model
     {
         return $this->belongsTo(Kelas::class,'kelas','id');
     }
+    public function idjurusan()
+    {
+        return $this->hasMany(Mapel::class);
+    }
 }
