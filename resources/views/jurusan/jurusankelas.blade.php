@@ -29,12 +29,12 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-				<!-- Add Order -->
+                <!-- Add Order -->
                 <div class="page-titles">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item" style="cursor: pointer;">Data</a></li>
-						<li class="breadcrumb-item active"><a href="/jurusan">Data Jurusan</a></li>
-					</ol>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item" style="cursor: pointer;">Data</a></li>
+                        <li class="breadcrumb-item active"><a href="/jurusan">Data Jurusan</a></li>
+                    </ol>
                 </div>
                 <!-- row -->
 
@@ -43,8 +43,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="/tambahjurusan"
-                                class="btn btn-outline-info btn-sm mb-1">Tambah Data Jurusan</a>
+                               <h4> Data Jurusan </h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -65,9 +64,9 @@
                                             @foreach ($data as $row)
                                             <tr>
                                                 <td>{{$no++}}</td>
-                                                <td>{{$row->idkelas->kelas}}</td>
+                                                <td>{{$row->kelas}}</td>
                                                 <td>{{$row->jurusan}}</td>
-                                                <td>   <a href="editjurusan/{{$row->id}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a></td>
+                                                <td>   </td>
                                                 
                                             </tr>
                                             @endforeach 
@@ -77,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-				</div>
+                </div>
             </div>
         </div>
         <!--**********************************

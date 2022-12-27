@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Jurusan extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+    protected $dates = ['created_at'];
+
+    public function idkelas()
+    {
+        return $this->belongsTo(Kelas::class,'kelas','id');
+    }
 }

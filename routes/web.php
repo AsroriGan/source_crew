@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\JurusanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,12 @@ Route::get('/datakelas',[DatasiswaController::class,'datakelas'])->name('datakel
 Route::get('/kelas',[KelasController::class,'kelas'])->name('kelas');
 Route::post('/tambahkelas',[KelasController::class,'tambahkelas'])->name('tambahkelas');
 Route::post('/editkelas/{id}',[KelasController::class,'editkelas'])->name('editkelas');
+Route::get('/jurusans/{id}',[KelasController::class,'jurusans'])->name('jurusans');
+
+
+//jurusan
+Route::get('/jurusan',[JurusanController::class,'jurusan'])->name('jurusan');
+Route::get('/tambahjurusan',[JurusanController::class,'tambahjurusan'])->name('tambahjurusan');
+Route::post('/tambahjurusanpost',[JurusanController::class,'tambahjurusanpost'])->name('tambahjurusanpost');
+Route::get('/editjurusan/{id}',[JurusanController::class,'editjurusan'])->name('editjurusan');
+Route::post('/editjurusanpost/{id}',[JurusanController::class,'editjurusanpost'])->name('editjurusanpost');

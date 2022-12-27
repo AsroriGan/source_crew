@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nisn');
             $table->string('nama');
             $table->string('kelis');
+            $table->string('jurusan');
             $table->string('jeniskelamin');
             $table->string('qr_code');
             $table->timestamps();

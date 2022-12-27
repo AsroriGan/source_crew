@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\Kelas;
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -34,5 +36,16 @@ class KelasController extends Controller
             'kelas' => $request->kelas,
         ]);       
         return redirect('kelas')->with('success','Data berhasil diupdate');
+    }
+
+    public function jurusans($id){
+        $detail = Jurusan::with('idkelas')->where('kelas',$id)->get();
+        $data = DB::table('Jurusans')
+        ->join('kelas', 'kelas.id', '=', 'Jurusans.kelas')
+        ->where('Jurusans.kelas', $id)
+        ->get();
+
+        // dd($data);
+        return view('jurusan.jurusankelas', compact('detail'))->with('data', $data);
     }
 }

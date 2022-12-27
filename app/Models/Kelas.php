@@ -11,4 +11,9 @@ class Kelas extends Model
 
     protected $guarded = [];
     protected $dates = ['created_at'];
+
+    public function idkelas()
+    {
+        return $this->hasMany(Jurusan::class);
+    }
 }

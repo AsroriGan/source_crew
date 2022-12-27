@@ -86,21 +86,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
                                             @foreach($data as $row)
-                                                <td class="text-center"><div class="btn-group dropright mb-1">
-                                                    <button type="button" class="btn btn-primary">
-                                                        {{$row->kelas}}
-                                                    </button>
-                                                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" onclick="btnDetail(this)"  data-id="{{ $row->kelas }}">
-                                                        <span class="sr-only">Toggle Dropright</span>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Link 1</a>
-                                                        <a class="dropdown-item" href="#">Link 2</a>
-                                                        <a class="dropdown-item" href="#">Link 3</a>
-                                                    </div>
-                                    </div></td>
+                                            <tr>
+                                            
+                                                <td class="text-center">
+                                                    <a href="/jurusans/{{$row->id}}"> {{$row->kelas}}</a></td>
                                                 <td><center>
                                                         <button href="#" class="btn btn-primary shadow btn-xs sharp mr-1" data-toggle="modal" data-target="#edit{{$row->id}}"><i class="fa fa-pencil"></i></button>
                                                         <a href="#" 
@@ -108,9 +98,9 @@
                                                                 data-kategori="{{ $row->kelas }}"><i class="fa fa-trash"></i></a>
                                                      </center>   
                                                     </td>
-                                            @endforeach    
+                                            
                                             </tr>
-                                          
+                                            @endforeach    
                                         </tbody>
                                       
                                     </table>
