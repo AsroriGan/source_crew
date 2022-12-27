@@ -18,9 +18,14 @@
                             <li><a href="/datakelas">Data Kelas</a></li>
                         </ul>
                     </li>
-                    <li><a class="ai-icon" style="cursor: pointer;" aria-expanded="false">
+                    <li><a href="/datarekap" class="ai-icon" style="cursor: pointer;" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text">Rekap Siswa</span>
+                    </a>
+                </li>
+                    <li><a href="/dataizin" class="ai-icon" style="cursor: pointer;" aria-expanded="false">
+                        <i class="flaticon-381-networking"></i>
+                        <span class="nav-text">Izin Siswa</span>
                     </a>
                 </li>
                 </ul>
