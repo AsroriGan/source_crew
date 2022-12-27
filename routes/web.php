@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsensiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatasiswaController;
 
@@ -17,7 +18,9 @@ use App\Http\Controllers\DatasiswaController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Absensi
+Route::get('/absensi',[AbsensiController::class,'scanqrview'])->name('absensi');
+Route::post('/insertabsen',[AbsensiController::class,'insert'])->name('insertabsen');
 // datasiswa
 Route::get('/datasiswa',[DatasiswaController::class,'datasiswa'])->name('datasiswa');
 //datakelas
